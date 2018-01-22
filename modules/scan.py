@@ -23,7 +23,7 @@ class ScanBRATS(object):
                 segmentation, brain mask and tumor distance map optionally
     """
     def __init__(self, clip=[-2.0, 2.0],
-                 scan_modalities=['t1', 't2', 't1c', 'fla']):
+                 scan_modalities=['t1', 't2', 't1c', 'flair']):
         """Initialization of ScanBRATS attributes."""
         self.extension = None
         self.clip = clip
