@@ -76,10 +76,11 @@ def main():
     # _______________________________________________________________________ #
     segmentation = post.postprocess(probabilities)
 
-    segmentation.astype('int16')
+    segmentation.astype(np.uint8)
 
     segmentation = nib.Nifti1Image(segmentation, np.eye(4))
-
+    segmentation.set_data_dtype(np.uint8)
+    
     output_path = os.path.join('/data/results/',
                                'tumor_' + args.DOCKER_IMAGE_ID +
                                '_class' + scan.extension)
